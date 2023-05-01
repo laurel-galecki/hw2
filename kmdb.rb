@@ -26,11 +26,40 @@
 #   files to create the tables in the database. (5 points)
 
 
-
-
 # - Insert the "Batman" sample data using ruby code. Do not use hard-coded ids.
 #   Delete any existing data beforehand so that each run of this script does not
 #   create duplicate data. (5 points)
+
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+
+studio1 = Studio.new 
+studio1["name"] = "Warner Bros."
+studio1.save
+
+movie1 = Movie.new 
+movie1["title"] = "Batman Begins"
+movie1["year_released"] = "2005"
+movie1["rated"] = "PG-13"
+movie1["studio_id"] = "1"
+movie1.save
+
+movie2 = Movie.new 
+movie2["title"] = "The Dark Knight"
+movie2["year_released"] = "2008"
+movie2["rated"] = "PG-13"
+movie2["studio_id"] = "1"
+movie2.save
+
+movie3 = Movie.new 
+movie3["title"] = "The Dark Knight Rises"
+movie3["year_released"] = "2012"
+movie3["rated"] = "PG-13"
+movie3["studio_id"] = "1"
+movie3.save
+
 # - Query the data and loop through the results to display output similar to the
 #   sample "report" below. (10 points)
 
