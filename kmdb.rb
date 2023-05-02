@@ -35,10 +35,12 @@ Movie.destroy_all
 Actor.destroy_all
 Role.destroy_all
 
+#insert studios
 studio1 = Studio.new 
 studio1["name"] = "Warner Bros."
 studio1.save
 
+#insert movies
 movie1 = Movie.new 
 movie1["title"] = "Batman Begins"
 movie1["year_released"] = "2005"
@@ -60,6 +62,7 @@ movie3["rated"] = "PG-13"
 movie3["studio_id"] = "1"
 movie3.save
 
+#insert actors
 actor1 = Actor.new 
 actor1["name"] = "Christian Bale"
 actor1.save
@@ -103,6 +106,104 @@ actor10.save
 actor11 = Actor.new 
 actor11["name"] = "Anne Hathaway"
 actor11.save
+
+#insert roles
+role1 = Role.new 
+role1["movie_id"] = "1"
+role1["actor_id"] = "1"
+role1["character_name"] = "Bruce Wayne"
+role1.save
+
+role2 = Role.new 
+role2["movie_id"] = "1"
+role2["actor_id"] = "2"
+role2["character_name"] = "Alfred"
+role2.save
+
+role3 = Role.new 
+role3["movie_id"] = "1"
+role3["actor_id"] = "3"
+role3["character_name"] = "Ra's Al Ghul"
+role3.save
+
+role4 = Role.new 
+role4["movie_id"] = "1"
+role4["actor_id"] = "4"
+role4["character_name"] = "Rachel Dawes"
+role4.save
+
+role5 = Role.new 
+role5["movie_id"] = "1"
+role5["actor_id"] = "5"
+role5["character_name"] = "Commissioner Gordon"
+role5.save
+
+role6 = Role.new 
+role6["movie_id"] = "2"
+role6["actor_id"] = "1"
+role6["character_name"] = "Bruce Wayne"
+role6.save
+
+role7 = Role.new 
+role7["movie_id"] = "2"
+role7["actor_id"] = "6"
+role7["character_name"] = "Joker"
+role7.save
+
+role8 = Role.new 
+role8["movie_id"] = "2"
+role8["actor_id"] = "7"
+role8["character_name"] = "Harvey Dent"
+role8.save
+
+role9 = Role.new 
+role9["movie_id"] = "2"
+role9["actor_id"] = "2"
+role9["character_name"] = "Alfred"
+role9.save
+
+role10 = Role.new 
+role10["movie_id"] = "2"
+role10["actor_id"] = "8"
+role10["character_name"] = "Rachel Dawes"
+role10.save
+
+role11 = Role.new 
+role11["movie_id"] = "3"
+role11["actor_id"] = "1"
+role11["character_name"] = "Bruce Wayne"
+role11.save
+
+role12 = Role.new 
+role12["movie_id"] = "3"
+role12["actor_id"] = "5"
+role12["character_name"] = "Commissioner Gordon"
+role12.save
+
+role13 = Role.new 
+role13["movie_id"] = "3"
+role13["actor_id"] = "9"
+role13["character_name"] = "Bruce Bane"
+role13.save
+
+role14 = Role.new 
+role14["movie_id"] = "3"
+role14["actor_id"] = "10"
+role14["character_name"] = "John Blake"
+role14.save
+
+role15 = Role.new 
+role15["movie_id"] = "3"
+role15["actor_id"] = "11"
+role15["character_name"] = "Selina Kyle"
+role15.save
+
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 1, "Bruce Wayne");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 5, "Commissioner Gordon");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 9, "Bane");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 10, "John Blake");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 11, "Selina Kyle");
+
 
 # - Query the data and loop through the results to display output similar to the
 #   sample "report" below. (10 points)
