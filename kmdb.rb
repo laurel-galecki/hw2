@@ -123,7 +123,7 @@ role1.save
 
 role2 = Role.new 
 role2["movie_id"] = batman_begins["id"]
-role2["actor_id"] = Actor.find_by({"name" => "Michael Cane"})["id"]
+role2["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
 role2["character_name"] = "Alfred"
 role2.save
 
@@ -165,7 +165,7 @@ role8.save
 
 role9 = Role.new 
 role9["movie_id"] = dark_knight["id"]
-role9["actor_id"] = Actor.find_by({"name" => "Michael Cane"})["id"]
+role9["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
 role9["character_name"] = "Alfred"
 role9.save
 
@@ -208,11 +208,6 @@ role15.save
 # - Query the data and loop through the results to display output similar to the
 #   sample "report" below. (10 points)
 
-  for X in X
-    studio_name = studio["name"]
-    puts "#{title} #{year_released} #{"rated"} #{studio_name}"
-
-  end
 
 # Submission
 # 
@@ -267,6 +262,17 @@ puts "Movies"
 puts "======"
 puts ""
 
+all_movies = Movie.all
+all_studios = Studio.all
+
+for film in all_movies
+  title = film["title"]
+  year_released = film["year_released"]
+  rated = film["rated"]
+#
+  puts "#{title} #{year_released} #{rated}"
+
+end
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
@@ -276,6 +282,13 @@ puts ""
 puts "Top Cast"
 puts "========"
 puts ""
+
+all_roles = Role.all
+
+for cast in all_roles
+  character_name = cast["character_name"]
+  puts "#{character_name}"
+end
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
